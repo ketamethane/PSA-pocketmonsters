@@ -23,10 +23,11 @@ const VisitorEntryView = ({ toggleAddVisitor }) => {
 
   const addVistor = async () => {
     await addDoc(collection(db, "users"), {
-      userId: userId,
+      id: userId,
       locationId: locationId,
       phoneNum: phoneNum,
       purpose: purpose,
+      role: "visitor",
     });
   }
 
