@@ -45,6 +45,7 @@ const VisitorView = () => {
       <p>
         {JSON.stringify(visitors)}
       </p>
+      {visitors.length <= 0 && <Typography>Loading...</Typography>}
       <Box
         // mx='auto'
         // width='100%'
@@ -53,7 +54,6 @@ const VisitorView = () => {
           visitors.length > 0 && visitors.map((item, idx) => {
             return (
               <div key={idx} style={{ textAlign: 'center' }}>
-                <VisitorCard visitor={item} />
                 <VisitorCard visitor={item} />
               </div>
             )
