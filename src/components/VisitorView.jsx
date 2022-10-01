@@ -27,7 +27,7 @@ const VisitorView = () => {
 
   useEffect(() => {
     visitorRef().then(response => setVisitors(response));
-  }, [])
+  }, []);
   
   return (
     <>
@@ -41,7 +41,7 @@ const VisitorView = () => {
         {JSON.stringify(visitors)}
       </p>
       {
-        visitors.map((item, idx) => {
+        visitors.length > 0 && visitors.map((item, idx) => {
           return (
             <div key={idx}>
               <VisitorCard visitor={item}/>

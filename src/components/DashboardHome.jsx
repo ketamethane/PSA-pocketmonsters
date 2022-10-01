@@ -13,7 +13,10 @@ const DashboardHome = () => {
         }}
       >
         <button
-          onClick={() => toggleAddVisitor(status => !status)}
+          onClick={() => {
+            toggleAddVisitor(status => !status)
+            toggleRefresh(r => !r);
+          }}
           style={{
             textAlign: 'right'
           }}
@@ -22,7 +25,7 @@ const DashboardHome = () => {
         </button>
       </div>
       {open && <VisitorEntryView toggleAddVisitor={toggleAddVisitor} />}
-      <VisitorView />
+      {!open && <VisitorView />}
     </>
   )
 }
