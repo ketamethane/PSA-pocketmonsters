@@ -9,13 +9,11 @@ const DashboardHome = () => {
       <div
         style={{
           textAlign: 'right',
-          marginRight: '20%'
         }}
       >
         <button
           onClick={() => {
             toggleAddVisitor(status => !status)
-            toggleRefresh(r => !r);
           }}
           style={{
             textAlign: 'right'

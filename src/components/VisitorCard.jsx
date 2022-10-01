@@ -10,7 +10,6 @@ const VisitorCard = ({ visitor }) => {
   return (
     <Card
       sx={{
-        maxWidth: '900px',
         textAlign: 'center'
       }}
     >

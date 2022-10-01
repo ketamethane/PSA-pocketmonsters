@@ -19,6 +19,8 @@ const VisitorView = () => {
     response.docs.map(item => {
       result.push({
         id: item.get("id"),
+        lat: item.get("lat"),
+        lng: item.get("lng"),
         role: item.get("role")
       })
     });
@@ -28,9 +30,12 @@ const VisitorView = () => {
   useEffect(() => {
     visitorRef().then(response => setVisitors(response));
   }, []);
-  
+
   return (
-    <>
+    <Box
+      mx='auto'
+      width='50%'
+    >
       <Typography
         variant='h3'
         sx={{ textAlign: 'center' }}
@@ -40,16 +45,22 @@ const VisitorView = () => {
       <p>
         {JSON.stringify(visitors)}
       </p>
-      {
-        visitors.length > 0 && visitors.map((item, idx) => {
-          return (
-            <div key={idx}>
-              <VisitorCard visitor={item}/>
-            </div>
-          )
-        })
-      }
-    </>
+      <Box
+        // mx='auto'
+        // width='100%'
+      >
+        {
+          visitors.length > 0 && visitors.map((item, idx) => {
+            return (
+              <div key={idx} style={{ textAlign: 'center' }}>
+                <VisitorCard visitor={item} />
+                <VisitorCard visitor={item} />
+              </div>
+            )
+          })
+        }
+      </Box>
+    </Box>
   )
 }
 
